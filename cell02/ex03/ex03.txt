@@ -1,0 +1,89 @@
+mkdir -p ~/discovery_piscine/cell02/ex03
+cd ~/discovery_piscine/cell02/ex03
+echo 'body {
+    font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+    background-color: #f4f4f4;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+}
+.card {
+    background-color: white;
+    width: 350px;
+    border-radius: 15px;
+    box-shadow: 0 10px 20px rgba(0,0,0,0.1);
+    text-align: center;
+    padding: 20px;
+}
+.profile-img {
+    width: 120px;
+    height: 120px;
+    border-radius: 50%;
+    object-fit: cover;
+    border: 5px solid #eee;
+}
+.login {
+    font-size: 24px;
+    font-weight: bold;
+    margin: 10px 0;
+}
+.description {
+    color: gray;
+    font-size: 16px;
+    margin-bottom: 20px;
+}
+.social-icons img {
+    width: 30px;
+    margin: 0 10px;
+    cursor: pointer;
+}
+.contact-btn {
+    background-color: #333;
+    color: white;
+    border: none;
+    padding: 10px 25px;
+    border-radius: 20px;
+    margin-top: 20px;
+    cursor: pointer;
+    font-size: 16px;
+}
+.contact-btn:hover {
+    background-color: #555;
+}
+table {
+    width: 100%;
+    border-collapse: collapse;
+    visibility: hidden; /* โจทย์สั่งให้อันนี้เป็น invisible table */
+    height: 0;
+}' > card.css
+echo '<!DOCTYPE html>
+<html>
+<head>
+    <title>User Profile Card</title>
+    <link rel="stylesheet" href="card.css">
+</head>
+<body>
+
+    <div class="card">
+        <h3>User Profile Card</h3>
+
+        <table><tr><td></td></tr></table>
+
+        <img src="https://via.placeholder.com/150" alt="Profile Picture" class="profile-img">
+
+        <div class="login">Your_Login_Name</div>
+
+        <div class="description">Level 42, Programmer</div>
+
+        <div class="social-icons">
+            <img src="https://cdn-icons-png.flaticon.com/512/174/174857.png" alt="LinkedIn">
+            <img src="https://cdn-icons-png.flaticon.com/512/25/25231.png" alt="GitHub">
+        </div>
+
+        <button class="contact-btn">Contact</button>
+    </div>
+
+</body>
+</html>' > card.html
