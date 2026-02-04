@@ -3,20 +3,27 @@ cd ~/discovery_piscine/cell01/ex05
 echo '<!DOCTYPE html>
 <html>
 <head>
-    <title>Tab Exercise</title>
+    <title>Tab Monday Friday</title>
     <style>
         table {
             width: 100%;
-            height: 200px;
-            border-collapse: collapse; /* ทำให้เส้นขอบตารางชิดกัน /
+            border-collapse: collapse;
         }
-        .first-cell {
-            background-color: #FFD700; / สีเหลืองทอง /
+        td {
+            height: 200px;
+            text-align: center;
+            font-size: 40px;
+            font-family: Arial, sans-serif;
+            color: white;
+        }
+        .monday {
+            background-color: #f1c40f; /* สีเหลืองวันจันทร์ */
             text-align: center;
             width: 50%;
+            color: black;
         }
-        .second-cell {
-            background-color: #87CEEB; / สีฟ้าอ่อน */
+        .friday {
+            background-color: #3498db; /* สีฟ้าวันศุกร์ */
             text-align: center;
             width: 50%;
         }
@@ -24,12 +31,13 @@ echo '<!DOCTYPE html>
 </head>
 <body>
 
-    <table border="1">
+    <table>
         <tr>
-            <td class="first-cell">First cell - Hello!</td>
-            <td class="second-cell">Second cell - Welcome!</td>
+            <td class="monday">monday</td>
+            <td class="friday">friday</td>
         </tr>
     </table>
 
 </body>
+</html>' > tab.html
 </html>' > tab.html
