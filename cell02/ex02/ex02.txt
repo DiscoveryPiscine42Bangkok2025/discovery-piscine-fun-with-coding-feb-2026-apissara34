@@ -1,0 +1,64 @@
+mkdir -p ~/discovery_piscine/cell02/ex02
+cd ~/discovery_piscine/cell02/ex02
+cp ~/discovery_piscine/cell01/ex02/cat1.jpg .
+cp ~/discovery_piscine/cell01/ex02/cat2.jpg .
+echo 'body, html {
+    height: 100%;
+    margin: 0;
+    font-family: Arial, sans-serif;
+}
+
+.parallax1, .parallax2 {
+    /* ตั้งค่าภาพพื้นหลัง */
+    background-attachment: fixed;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.parallax1 { background-image: url("cat1.jpg"); }
+.parallax2 { background-image: url("cat2.jpg"); }
+
+.text-box {
+    background-color: rgba(255, 255, 255, 0.7);
+    padding: 20px;
+    font-size: 30px;
+    border-radius: 10px;
+}
+
+.black-block {
+    height: 400px;
+    background-color: black;
+    color: white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 25px;
+    text-align: center;
+}' > parallax.css
+echo '<!DOCTYPE html>
+<html>
+<head>
+    <title>Parallax Effect</title>
+    <link rel="stylesheet" href="parallax.css">
+</head>
+<body>
+
+    <div class="parallax1">
+        <div class="text-box">Welcome to Parallax!</div>
+    </div>
+
+    <div class="black-block">
+        <p>This is a black block with a message of your choice.<br>Scroll down to see the magic!</p>
+    </div>
+
+    <div class="parallax2">
+        <div class="text-box">The End of the Page</div>
+    </div>
+
+</body>
+</html>' > parallax.html
