@@ -1,0 +1,66 @@
+mkdir -p ~/discovery_piscine/cell03/ex01
+cd ~/discovery_piscine/cell03/ex01
+echo '<!DOCTYPE html>
+<html>
+<head>
+    <title>Explode this balloon</title>
+    <style>
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+        }
+        #balloon {
+            width: 200px;
+            height: 200px;
+            background-color: red;
+            border-radius: 50%; /* ทำให้เป็นวงกลม /
+            cursor: pointer;
+            transition: background-color 0.2s; / เพื่อให้สีเปลี่ยนนุ่มนวลขึ้นนิดหน่อย */
+        }
+    </style>
+</head>
+<body>
+
+    <div id="balloon" onclick="clickBalloon()" onmouseleave="leaveBalloon()"></div>
+
+    <script>
+        const balloon = document.getElementById("balloon");
+        let size = 200;
+        const colors = ["red", "green", "blue"];
+        let colorIndex = 0;
+
+        function updateBalloon() {
+            balloon.style.width = size + "px";
+            balloon.style.height = size + "px";
+            balloon.style.backgroundColor = colors[colorIndex];
+        }
+
+        function clickBalloon() {
+            size += 10;
+            // ถ้าขนาดเกิน 420px ให้ระเบิดกลับไปค่าเริ่มต้น
+            if (size > 420) {
+                size = 200;
+                colorIndex = 0;
+            } else {
+                // เปลี่ยนสีตามลำดับ แดง -> เขียว -> น้ำเงิน
+                colorIndex = (colorIndex + 1) % colors.length;
+            }
+            updateBalloon();
+        }
+
+        function leaveBalloon() {
+            // ขนาดลดลง 5px แต่ไม่ต่ำกว่า 200px
+            if (size > 200) {
+                size -= 5;
+            }
+            // เปลี่ยนสีตามลำดับย้อนกลับ
+            colorIndex = (colorIndex - 1 + colors.length) % colors.length;
+            updateBalloon();
+        }
+    </script>
+
+</body>
+</html>' > balloon.html
