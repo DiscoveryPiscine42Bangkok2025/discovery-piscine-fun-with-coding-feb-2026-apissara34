@@ -1,0 +1,13 @@
+mkdir -p ~/discovery_piscine/cell00/ex05
+cd ~/discovery_piscine/cell00/ex05
+echo '#!/bin/bash
+if [ $# -eq 0 ]; then
+    echo "No arguments supplied"
+else
+    for arg in "$@"; do
+        mkdir "ex$arg"
+    done
+fi' > build.sh
+chmod +x build.sh
+./build.sh 01 02 03
+ls -l
