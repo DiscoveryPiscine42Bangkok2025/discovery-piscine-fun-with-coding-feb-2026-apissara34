@@ -1,0 +1,49 @@
+mkdir -p ~/discovery_piscine/cell03/ex00
+cd ~/discovery_piscine/cell03/ex00
+echo 'body {
+    height: 100vh;
+    margin: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition: background-color 0.3s; /* ทำให้สีค่อยๆ เปลี่ยนแบบนุ่มนวล */
+}
+
+button {
+    padding: 20px 40px;
+    font-size: 20px;
+    cursor: pointer;
+    border-radius: 10px;
+    border: none;
+    background-color: #333;
+    color: white;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+}
+
+button:hover {
+    background-color: #555;
+}' > background.css
+echo '<!DOCTYPE html>
+<html>
+<head>
+    <title>Change Background</title>
+    <link rel="stylesheet" href="background.css">
+</head>
+<body>
+
+    <button onclick="changeColor()">Click me!</button>
+
+    <script>
+        function changeColor() {
+            // สุ่มค่าสี 0-255 สำหรับ Red, Green, Blue
+            const r = Math.floor(Math.random() * 256);
+            const g = Math.floor(Math.random() * 256);
+            const b = Math.floor(Math.random() * 256);
+
+            // นำค่าที่สุ่มได้มาใส่เป็นสีพื้นหลังของ body
+            document.body.style.backgroundColor = "rgb(" + r + "," + g + "," + b + ")";
+        }
+    </script>
+
+</body>
+</html>' > background.html
