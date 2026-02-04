@@ -1,0 +1,35 @@
+mkdir -p ~/discovery_piscine/cell01/ex05
+cd ~/discovery_piscine/cell01/ex05
+echo '<!DOCTYPE html>
+<html>
+<head>
+    <title>Tab Exercise</title>
+    <style>
+        table {
+            width: 100%;
+            height: 200px;
+            border-collapse: collapse; /* ทำให้เส้นขอบตารางชิดกัน /
+        }
+        .first-cell {
+            background-color: #FFD700; / สีเหลืองทอง /
+            text-align: center;
+            width: 50%;
+        }
+        .second-cell {
+            background-color: #87CEEB; / สีฟ้าอ่อน */
+            text-align: center;
+            width: 50%;
+        }
+    </style>
+</head>
+<body>
+
+    <table border="1">
+        <tr>
+            <td class="first-cell">First cell - Hello!</td>
+            <td class="second-cell">Second cell - Welcome!</td>
+        </tr>
+    </table>
+
+</body>
+</html>' > tab.html
