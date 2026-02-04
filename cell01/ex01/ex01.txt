@@ -1,0 +1,16 @@
+cd ~/discovery_piscine/cell01
+mkdir ex01
+cd ex01
+echo '<!DOCTYPE html>
+<html>
+<head>
+    <style>
+        h1 {
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+    <h1>Piscine Web</h1>
+</body>
+</html>' > piscineweb.html
