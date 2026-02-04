@@ -1,0 +1,26 @@
+mkdir -p ~/discovery_piscine/cell01/ex03
+cp ~/discovery_piscine/cell01/ex02/* ~/discovery_piscine/cell01/ex03/
+cd ~/discovery_piscine/cell01/ex03
+echo '<!DOCTYPE html>
+<html>
+<head>
+    <style>
+        h1 {
+            text-align: center;
+        }
+        img {
+            display: block;
+            margin: 20px auto;
+            width: 300px;
+        }
+    </style>
+</head>
+<body>
+    <h1>Piscine Web</h1>
+    <a href="https://www.youtube.com/watch?v=INscMGmhmX4">
+        <img src="cat1.jpg" alt="cat1">
+    </a>
+
+    <img src="cat2.jpg" alt="cat2">
+</body>
+</html>' > piscineweb.html
