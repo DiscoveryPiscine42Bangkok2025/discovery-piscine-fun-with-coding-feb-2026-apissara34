@@ -12,28 +12,31 @@ table {
 }
 td {
     text-align: center;
-    font-size: 5vw; /* ขนาดตัวอักษรจะปรับตามขนาดจอ /
-    color: white;
+    font-size: 10vw; /* ขนาดตัวอักษรยืดหยุ่นตามความกว้างหน้าจอ */
+    font-family: Arial, sans-serif;
+    font-weight: bold;
 }
-.box1 {
-    background-color: #34495e; / สีน้ำเงินเข้ม /
+.monday {
+    background-color: #f1c40f; /* สีเหลือง */
+    color: #333;
     width: 50%;
 }
-.box2 {
-    background-color: #e67e22; / สีส้ม */
+.friday {
+    background-color: #3498db; /* สีฟ้า */
+    color: white;
     width: 50%;
 }' > responsive.css
 echo '<!DOCTYPE html>
 <html>
 <head>
-    <title>Improved Responsive</title>
+    <title>Monday Friday Responsive</title>
     <link rel="stylesheet" href="responsive.css">
 </head>
 <body>
     <table>
         <tr>
-            <td class="box1">Left Cell</td>
-            <td class="box2">Right Cell</td>
+            <td class="monday">monday</td>
+            <td class="friday">friday</td>
         </tr>
     </table>
 </body>
