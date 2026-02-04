@@ -1,0 +1,23 @@
+cd ~/discovery_piscine/cell01/ex02
+mv cat1.* cat1.jpg
+mv cat2.* cat2.jpg
+echo '<!DOCTYPE html>
+<html>
+<head>
+    <style>
+        h1 {
+            text-align: center;
+        }
+        img {
+            display: block;
+            margin: 20px auto;
+            width: 300px;
+        }
+    </style>
+</head>
+<body>
+    <h1>Piscine Web</h1>
+    <img src="cat1.jpg" alt="cat1">
+    <img src="cat2.jpg" alt="cat2">
+</body>
+</html>' > piscineweb.html
