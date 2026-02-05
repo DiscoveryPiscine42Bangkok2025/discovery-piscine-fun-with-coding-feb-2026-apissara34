@@ -1,0 +1,109 @@
+mkdir -p ~/discovery_piscine/cell03/ex00bis ~/discovery_piscine/cell03/ex01bis ~/discovery_piscine/cell03/ex02bis ~/discovery_piscine/cell03/ex03bis
+echo '<!DOCTYPE html>
+<html>
+<head>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <title>Change Background jQuery</title>
+</head>
+<body>
+    <button id="btn">Click me!</button>
+    <script>
+        $("#btn").click(function() {
+            const r = Math.floor(Math.random() * 256);
+            const g = Math.floor(Math.random() * 256);
+            const b = Math.floor(Math.random() * 256);
+            $("body").css("background-color", "rgb(" + r + "," + g + "," + b + ")");
+        });
+    </script>
+</body>
+</html>' > ~/discovery_piscine/cell03/ex00bis/background.html
+echo '<!DOCTYPE html>
+<html>
+<head>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <style>
+        #balloon { width: 200px; height: 200px; background: red; border-radius: 50%; }
+    </style>
+</head>
+<body>
+    <div id="balloon"></div>
+    <script>
+        let size = 200;
+        let colors = ["red", "green", "blue"];
+        let i = 0;
+
+        $("#balloon").click(function() {
+            size += 10;
+            if (size > 420) { size = 200; i = 0; }
+            else { i = (i + 1) % 3; }
+            $(this).css({width: size, height: size, backgroundColor: colors[i]});
+        });
+
+        $("#balloon").mouseleave(function() {
+            if (size > 200) size -= 5;
+            i = (i - 1 + 3) % 3;
+            $(this).css({width: size, height: size, backgroundColor: colors[i]});
+        });
+    </script>
+</body>
+</html>' > ~/discovery_piscine/cell03/ex01bis/balloon.html
+echo '<!DOCTYPE html>
+<html>
+<head>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+</head>
+<body>
+    <input type="text" id="v1">
+    <select id="op">
+        <option>+</option><option>-</option><option>*</option><option>/</option><option>%</option>
+    </select>
+    <input type="text" id="v2">
+    <input type="button" id="calc" value="Try me!">
+    <script>
+        setInterval(() => alert("Please, use me..."), 30000);
+        $("#calc").click(function() {
+            let v1 = $("#v1").val(), v2 = $("#v2").val(), op = $("#op").val();
+            if (!/^\d+$/.test(v1)  !/^\d+$/.test(v2)) return alert("Error :(");
+            v1 = parseInt(v1); v2 = parseInt(v2);
+            if ((op=="/" 
+ op=="%") && v2==0) { alert("It is over 9000!"); return console.log("It is over 9000!"); }
+            let res = eval(v1 + op + v2);
+            alert(res); console.log(res);
+        });
+    </script>
+</body>
+</html>' > ~/discovery_piscine/cell03/ex02bis/calc.html
+echo '<!DOCTYPE html>
+<html>
+<head>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+</head>
+<body>
+    <button id="new">New</button>
+    <div id="ft_list"></div>
+    <script>
+        const save = () => {
+            let arr = [];
+            $("#ft_list div").each(function() { arr.push($(this).text()); });
+            document.cookie = "todos=" + JSON.stringify(arr) + ";path=/;max-age=31536000";
+        };
+
+        const add = (txt, isNew) => {
+            let div = $("<div></div>").text(txt).click(function() {
+                if (confirm("Remove?")) { $(this).remove(); save(); }
+            });
+            isNew ? $("#ft_list").prepend(div) : $("#ft_list").append(div);
+        };
+
+        $("#new").click(function() {
+            let txt = prompt("New task:");
+            if (txt && txt.trim()) { add(txt, true); save(); }
+        });
+
+        $(document).ready(function() {
+            let c = document.cookie.split("; ").find(r => r.startsWith("todos="));
+            if (c) JSON.parse(c.split("=")[1]).forEach(t => add(t, false));
+        });
+    </script>
+</body>
+</html>' > ~/discovery_piscine/cell03/ex03bis/index.html
