@@ -3,43 +3,40 @@ cd ~/discovery_piscine/cell02/ex02
 cp ~/discovery_piscine/cell01/ex02/cat1.jpg .
 cp ~/discovery_piscine/cell01/ex02/cat2.jpg .
 echo 'body, html {
-    height: 100%;
-    margin: 0;
-    font-family: Arial, sans-serif;
+height: 100%;
+margin: 0;
+font-family: Arial, sans-serif;
 }
-
 .parallax1, .parallax2 {
-    /* ตั้งค่าภาพพื้นหลัง */
-    background-attachment: fixed;
-    background-position: center;
-    background-repeat: no-repeat;
-    background-size: cover;
-    height: 100%;
-    display: flex;
-    justify-content: center;
-    align-items: center;
+/* ตั้งค่าภาพพื้นหลัง */
+background-attachment: fixed;
+background-position: center;
+background-repeat: no-repeat;
+background-size: cover;
+height: 100%;
+display: flex;
+justify-content: center;
+align-items: center;
 }
-
 .parallax1 { background-image: url("cat1.jpg"); }
 .parallax2 { background-image: url("cat2.jpg"); }
-
 .text-box {
-    background-color: rgba(255, 255, 255, 0.7);
-    padding: 20px;
-    font-size: 30px;
-    border-radius: 10px;
+background-color: rgba(255, 255, 255, 0.7);
+padding: 20px;
+font-size: 30px;
+border-radius: 10px;
 }
-
 .black-block {
-    height: 400px;
-    background-color: black;
-    color: white;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    font-size: 25px;
-    text-align: center;
-}' > parallax.css
+height: 400px;
+background-color: rgb(226, 123, 255);
+color: rgb(255, 255, 255);
+display: flex;
+justify-content: center;
+align-items: center;
+font-size: 25px;
+text-align: center;
+}
+' > parallax.css
 echo '<!DOCTYPE html>
 <html>
 <head>
